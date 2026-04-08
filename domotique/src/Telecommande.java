@@ -1,16 +1,23 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Telecommande {
     private ArrayList<Lampe> listeLampe;
 
-    public Telecommande(Lampe[] liste) {
-        for (int i = 0; i < liste.length; i++) {
-            this.listeLampe.add(liste[i]);
+    public Telecommande(){
+        this.listeLampe = new ArrayList<>();
+    }
+
+    public Telecommande(ArrayList<Lampe> liste) {
+        if(liste != null) {
+            this.listeLampe.addAll(liste);
         }
     }
 
     public void ajouterLampe(Lampe l) {
-        throw new Error("code non ecrit");
+        if(l != null) this.listeLampe.add(l);
     }
 
     public void activerLampe(int i) {
@@ -27,5 +34,9 @@ public class Telecommande {
 
     public String toString() {
         throw new Error("code non ecrit");
+    }
+
+    public ArrayList<Lampe> getListeLampe() {
+        return listeLampe;
     }
 }
