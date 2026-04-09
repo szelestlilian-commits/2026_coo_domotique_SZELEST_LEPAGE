@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.awt.font.LayoutPath;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -29,7 +28,8 @@ public class TelecommandeTest {
         Lampe l1 = new Lampe("lampe");
         ArrayList<Lampe> liste = new ArrayList<>();
         liste.add(l1);
-        Telecommande t = new Telecommande(liste);
+        ArrayList<Hifi> listeHifi = new ArrayList<>();
+        Telecommande t = new Telecommande(liste, listeHifi);
 
         Lampe l2 = new Lampe("lampe2");
         t.ajouterLampe(l2);
@@ -45,7 +45,8 @@ public class TelecommandeTest {
         Lampe l1 = new Lampe("lampe");
         ArrayList<Lampe> liste = new ArrayList<>();
         liste.add(l1);
-        Telecommande t = new Telecommande(liste);
+        ArrayList<Hifi> listeHifi = new ArrayList<>();
+        Telecommande t = new Telecommande(liste, listeHifi);
 
         t.activerLampe(0);
 
@@ -60,7 +61,8 @@ public class TelecommandeTest {
         Lampe l1 = new Lampe("lampe");
         ArrayList<Lampe> liste = new ArrayList<>();
         liste.add(l1);
-        Telecommande t = new Telecommande(liste);
+        ArrayList<Hifi> listeHifi = new ArrayList<>();
+        Telecommande t = new Telecommande(liste, listeHifi);
 
         Lampe l2 = new Lampe("lampe2");
         t.ajouterLampe(l2);
@@ -78,7 +80,8 @@ public class TelecommandeTest {
         Lampe l1 = new Lampe("lampe");
         ArrayList<Lampe> liste = new ArrayList<>();
         liste.add(l1);
-        Telecommande t = new Telecommande(liste);
+        ArrayList<Hifi> listeHifi = new ArrayList<>();
+        Telecommande t = new Telecommande(liste, listeHifi);
 
         try{
             t.activerLampe(3);
