@@ -5,17 +5,21 @@ import java.util.Collections;
 
 public class Telecommande {
     private ArrayList<Lampe> listeLampe;
+    private ArrayList<Hifi> listeHifi;
 
     public Telecommande(){
         this.listeLampe = new ArrayList<>();
+        this.listeHifi = new ArrayList<>();
     }
 
-    public Telecommande(ArrayList<Lampe> liste) {
+    public Telecommande(ArrayList<Lampe> liste, ArrayList<Hifi> listeChaineHifi) {
         if(liste != null) {
             this.listeLampe = liste;
         }
+        if(liste != null) {
+            this.listeHifi = listeChaineHifi;
+        }
     }
-
     public void ajouterLampe(Lampe l) {
         if(l != null) this.listeLampe.add(l);
     }
@@ -34,8 +38,16 @@ public class Telecommande {
         }
     }
 
+    public void augmenterSon(int i){
+        this.listeHifi.get(i).allumer();
+    }
+
+    public void desactiverHifi(int i){
+        this.listeHifi.get(i).eteindre();
+    }
+
     public String toString() {
-        String res = "Télécommande : \n";
+        String res = "Télécommande : \nLes lampes :\n";
 
         for (int i = 0; i < this.listeLampe.size(); i++) {
             Lampe l = listeLampe.get(i);
@@ -44,6 +56,11 @@ public class Telecommande {
             }else{
                 res = res + i + " : " + l.getLampe() + "éteinte \n";
             }
+        }
+        res += "Les Chaines Hifis : \n";
+        for (int i = 0; i < this.listeLampe.size(); i++) {
+            Hifi h = listeHifi.get(i);
+            h.toString();
         }
         return res;
     }
