@@ -1,0 +1,18 @@
+@startuml Télécommande
+
+'''classes
+class Hifi{
+}
+
+class Lampe{
+}
+
+class Telecommande{
+}
+
+
+'''relations
+Telecommande "1" -> "*" Lampe : controle
+Telecommande "1" -> "*" Hifi : controle
+
+@enduml
