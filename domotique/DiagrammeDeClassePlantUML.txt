@@ -1,0 +1,41 @@
+@startuml Télécommande
+
+'''classes
+class Hifi{
+    -son : int
+    +allumer() : 
+    +eteindre() : 
+    +toString() : String
+}
+
+class Lampe{
+    -nom : String 
+    -allume : boolean
+    +Lampe(paramNom : String) : 
+    +allumer() : 
+    +eteindre() :
+    +toString() : String
+    +getLampe() : String
+    +isAllume() : boolean 
+}
+
+class Telecommande{
+    -listeLampe : ArrayList<Lampe>
+    -listeHifi : ArrayList<Hifi>
+    +Telecommande() :
+    +ajouterLampe(l : Lampe) :
+    +activerLampe(i : int) : 
+    +desactiverLampe(i : int) : 
+    +activerTout() : 
+    +augmenterSon(i : int) : 
+    +desactiverHifi(i :int) : 
+    +toString() : String
+    +getListeLampe() : ArrayList<Lampe>
+}
+
+
+'''relations
+Telecommande "1" -> "*" Lampe : controle   
+Telecommande "1" -> "*" Hifi : controle
+
+@enduml
