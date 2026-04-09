@@ -61,7 +61,7 @@ public class Telecommande {
         for (int i = 0; i < this.listeLampe.size(); i++) {
             Hifi h = listeHifi.get(i);
             h.toString();
-        }
+        }   
         return res;
     }
 

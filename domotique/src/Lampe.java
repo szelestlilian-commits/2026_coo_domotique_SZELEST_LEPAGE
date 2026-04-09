@@ -55,6 +55,10 @@ public class Lampe {
 		return (nom + ": " + r);
 	}
 
+	public String getLampe(){
+		return nom;
+	}
+
 	/**
 	 * permet de savoir si la lampe est allumee
 	 * 
