@@ -12,7 +12,7 @@ public class Telecommande {
 
     public Telecommande(ArrayList<Lampe> liste) {
         if(liste != null) {
-            this.listeLampe.addAll(liste);
+            this.listeLampe = liste;
         }
     }
 
@@ -21,19 +21,31 @@ public class Telecommande {
     }
 
     public void activerLampe(int i) {
-        throw new Error("code non ecrit");
+        this.listeLampe.get(i).allumer();
     }
 
     public void desactiverLampe(int i) {
-        throw new Error("code non ecrit");
+        this.listeLampe.get(i).eteindre();
     }
 
     public void activerTout() {
-        throw new Error("code non ecrit");
+        for (Lampe lampe : this.listeLampe){
+            lampe.allumer();
+        }
     }
 
     public String toString() {
-        throw new Error("code non ecrit");
+        String res = "Télécommande : \n";
+
+        for (int i = 0; i < this.listeLampe.size(); i++) {
+            Lampe l = listeLampe.get(i);
+            if(l.isAllume()) {
+                res = res + i + " : " + l.getLampe() + "allumé \n";
+            }else{
+                res = res + i + " : " + l.getLampe() + "éteinte \n";
+            }
+        }
+        return res;
     }
 
     public ArrayList<Lampe> getListeLampe() {
