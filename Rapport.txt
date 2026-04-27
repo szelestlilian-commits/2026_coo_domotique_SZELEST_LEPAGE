@@ -5,3 +5,7 @@ Question 1) Finalisation de l’écriture de votre code.
 Question 2) Diagramme dans les dossiers du projet.
 
 Question 3) 23 lignes ont été modifiées entre le tag v1.0 et le tag v2
+
+Question 4) Diagramme incluant une télévision déssiné sur feuille.
+
+Question 5) 
