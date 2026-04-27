@@ -40,7 +40,7 @@ class Telecommande{
 }
 
 class Television{
-    -volume : int
+    -son : int
     +allumer() :
     +eteindre() :
     toString() : String
