@@ -13,3 +13,8 @@ il faudrait changer ce code à deux endroits différent.
 
 Question 6) Les associations se font de la classe Télécommande vers les autres, donc si on modifi un
 des appareils, il y a de forte chance qu'on ait à modifier la classe Télécommande.
+
+Question 7) Une télécommande contient des listes d'appareils qu'elle contrôle.
+Elle contrôle ses appareils en appellant leurs méthodes respectives. Par exemple :
+en appellant la méthode allumer sur une lampe à l'indice i de sa liste de sa liste de lampe,
+la télécommande appelle la méthode allumer() de cette lampe, cette lampe s'allume.
