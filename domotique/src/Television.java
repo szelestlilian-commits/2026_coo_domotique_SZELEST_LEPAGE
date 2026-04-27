@@ -1,4 +1,4 @@
-public class Television {
+public class Television implements Appareil {
     private int son = 0;
 
     /**
