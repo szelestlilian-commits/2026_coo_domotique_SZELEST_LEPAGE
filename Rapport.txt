@@ -10,3 +10,6 @@ Question 4) Diagramme incluant une télévision déssiné sur feuille.
 
 Question 5) Si on faisait des copiers coller de code, et qu'il y aurait un problème avec ce code,
 il faudrait changer ce code à deux endroits différent.
+
+Question 6) Les associations se font de la classe Télécommande vers les autres, donc si on modifi un
+des appareils, il y a de forte chance qu'on ait à modifier la classe Télécommande.
