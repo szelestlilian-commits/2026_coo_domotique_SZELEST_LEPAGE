@@ -8,4 +8,5 @@ Question 3) 23 lignes ont été modifiées entre le tag v1.0 et le tag v2
 
 Question 4) Diagramme incluant une télévision déssiné sur feuille.
 
-Question 5) 
+Question 5) Si on faisait des copiers coller de code, et qu'il y aurait un problème avec ce code,
+il faudrait changer ce code à deux endroits différent.
