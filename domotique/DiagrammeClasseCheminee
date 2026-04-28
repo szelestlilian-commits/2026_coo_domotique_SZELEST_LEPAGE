@@ -1,0 +1,67 @@
+@startuml Télécommande
+
+'''classes
+
+Interface Appareil{
+    abstract void allumer() :
+    abstract void eteindre() :
+}
+
+class Hifi{
+    -son : int
+    +allumer() :
+    +eteindre() :
+    +toString() : String
+}
+
+class Lampe{
+    -nom : String
+    -allume : boolean
+    +Lampe(paramNom : String) :
+    +allumer() :
+    +eteindre() :
+    +toString() : String
+    +getLampe() : String
+    +isAllume() : boolean
+}
+
+class Telecommande{
+    -listeLampe : ArrayList<Lampe>
+    -listeHifi : ArrayList<Hifi>
+    +Telecommande() :
+    +ajouterLampe(l : Lampe) :
+    +activerLampe(i : int) :
+    +desactiverLampe(i : int) :
+    +activerTout() :
+    +augmenterSon(i : int) :
+    +desactiverHifi(i :int) :
+    +toString() : String
+    +getListeLampe() : ArrayList<Lampe>
+}
+
+class Television{
+    -son : int
+    +allumer() :
+    +eteindre() :
+    toString() : String
+}
+
+class Cheminee {
+    +intensite : int
+    +cheminee() :
+    +changerIntensite(int i) :
+    +getLumiere() : int
+    +toString() : String
+}
+
+
+
+'''relations
+Telecommande "1" --> "*" Appareil : controle
+Hifi -up-|> Appareil : Implemente
+Lampe -up-|> Appareil : Implemente
+Television -up-|> Appareil : Implemente
+Adaptateur -up-|> Appareil : Implemente
+Adaptateur "1" -right-> "1" Cheminee : Adapte
+
+@enduml
