@@ -11,44 +11,44 @@ public class TelecommandeTest {
     /**
      *ajout d'une lampe à une télecommande vide.
      */
-    public void testAjoutLampeVide(){
+    public void testAjoutLampeVide() {
         Lampe l = new Lampe("lampe");
         Telecommande t = new Telecommande();
 
-        t.ajouterLampe(l);
+        t.ajouterAppareil(l);
 
-        assertEquals(1, t.getListeLampe().size());
+        assertEquals(1, t.getListeAppareil().size());
     }
 
     @Test
     /**
      * ajout d'une lampe a une télecommande qui possède déjà une lampe
      */
-    public void testAjoutLampeUnElem(){
+    public void testAjoutLampeUnElem() {
         Lampe l1 = new Lampe("lampe");
-        ArrayList<Lampe> liste = new ArrayList<>();
-        liste.add(l1);
-        ArrayList<Hifi> listeHifi = new ArrayList<>();
-        Telecommande t = new Telecommande(liste, listeHifi);
-
+        ;
         Lampe l2 = new Lampe("lampe2");
-        t.ajouterLampe(l2);
 
-        assertEquals(2, t.getListeLampe().size());
+        Telecommande t = new Telecommande();
+
+        t.ajouterAppareil(l1);
+        t.ajouterAppareil(l2);
+
+        assertEquals(2, t.getListeAppareil().size());
     }
 
     @Test
     /**
      * active une lampe existante en position 0
      */
-    public void testActiveLampe0(){
+    public void testActiveLampe0() {
         Lampe l1 = new Lampe("lampe");
-        ArrayList<Lampe> liste = new ArrayList<>();
-        liste.add(l1);
-        ArrayList<Hifi> listeHifi = new ArrayList<>();
-        Telecommande t = new Telecommande(liste, listeHifi);
 
-        t.activerLampe(0);
+        Telecommande t = new Telecommande();
+
+        t.ajouterAppareil(l1);
+
+        t.activerAppareil(0);
 
         assertEquals(true, l1.isAllume());
     }
@@ -57,17 +57,15 @@ public class TelecommandeTest {
     /**
      * active une lampe existante en position 1
      */
-    public void testActiveLampe1(){
+    public void testActiveLampe1() {
         Lampe l1 = new Lampe("lampe");
-        ArrayList<Lampe> liste = new ArrayList<>();
-        liste.add(l1);
-        ArrayList<Hifi> listeHifi = new ArrayList<>();
-        Telecommande t = new Telecommande(liste, listeHifi);
-
         Lampe l2 = new Lampe("lampe2");
-        t.ajouterLampe(l2);
 
-        t.activerLampe(1);
+        Telecommande t = new Telecommande();
+
+        t.ajouterAppareil(l1);
+        t.ajouterAppareil(l2);
+        t.activerAppareil(1);
 
         assertEquals(true, l2.isAllume());
     }
@@ -76,18 +74,33 @@ public class TelecommandeTest {
     /**
      * active une lampe inexistante
      */
-    public void testActiveLampeInexistante(){
+    public void testActiveLampeInexistante() {
         Lampe l1 = new Lampe("lampe");
         ArrayList<Lampe> liste = new ArrayList<>();
         liste.add(l1);
-        ArrayList<Hifi> listeHifi = new ArrayList<>();
-        Telecommande t = new Telecommande(liste, listeHifi);
+        Telecommande t = new Telecommande();
+        t.ajouterAppareil(l1);
 
-        try{
-            t.activerLampe(3);
-        } catch(IndexOutOfBoundsException e){
+        try {
+            t.activerAppareil(3);
+        } catch (IndexOutOfBoundsException e) {
 
         }
     }
 
+    @Test
+    /**
+     * active une cheminee
+     */
+    public void testAllumerCheminee() {
+        Cheminee c = new Cheminee();
+        Adaptateur ad = new Adaptateur(c);
+
+        Telecommande t = new Telecommande();
+        t.ajouterAppareil(ad);
+
+        t.activerAppareil(0);
+
+        assertEquals(10, ad.getLumiere());
+    }
 }
