@@ -10,15 +10,15 @@ public class Telecommande{
         this.listeAppareil = new ArrayList<>();
 
     }
-    public void ajouterLampe(Lampe l) {
-        if(l != null) this.listeAppareil.add(l);
+    public void ajouterAppareil(Appareil a) {
+        if(a != null) this.listeAppareil.add(a);
     }
 
-    public void activerLampe(int i) {
+    public void activerAppareil(int i) {
         this.listeAppareil.get(i).allumer();
     }
 
-    public void desactiverLampe(int i) {
+    public void desactiverAppareil(int i) {
         this.listeAppareil.get(i).eteindre();
     }
 

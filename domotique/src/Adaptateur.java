@@ -1,13 +1,20 @@
 public class Adaptateur implements Appareil{
-    Cheminee cheminee = new Cheminee();
+    Cheminee cheminee;
 
+    public Adaptateur(Cheminee c){
+        this.cheminee = c;
+    }
     @Override
     public void allumer() {
-        this.cheminee.intensite += 10;
+        cheminee.changerIntensite(10);
     }
 
     @Override
     public void eteindre() {
-        this.cheminee.intensite = 0;
+        this.cheminee.changerIntensite(0);
+    }
+
+    public int getLumiere(){
+        return this.cheminee.getLumiere();
     }
 }
